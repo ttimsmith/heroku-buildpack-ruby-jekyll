@@ -772,7 +772,7 @@ params = CGI.parse(uri.query || "")
 
   def generate_jekyll_site
     puts "Building jekyll site"
-    config_environment = ENV["CONFIG_ENVIRONMENT"] || ""
+    config_environment = ENV["CONFIG_ENVIRONMENT"] || "_config.yml"
 
     pipe("env PATH=$PATH bundle exec jekyll build --config #{config_environment} 2>&1")
     unless $? == 0
